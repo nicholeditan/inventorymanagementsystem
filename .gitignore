@@ -1,0 +1,12 @@
+# Generated on the first Codespaces run. The generated Laravel project
+# provides its own .gitignore and the setup script preserves SQLite exclusions.
+.env
+.env.*
+!.env.example
+/vendor/
+/node_modules/
+/database/*.sqlite
+/database/*.sqlite-*
+/public/build/
+/public/hot
+*.log

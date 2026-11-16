@@ -1,0 +1,44 @@
+{
+  "name": "Web Development 2 | Laravel REST API",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Laravel Student API",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "routes/api.php",
+        "app/Http/Controllers/Api/StudentController.php"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "onecentlin.laravel-blade",
+        "humao.rest-client"
+      ],
+      "settings": {
+        "files.autoSave": "afterDelay",
+        "editor.wordWrap": "on",
+        "editor.minimap.enabled": false,
+        "editor.fontSize": 14
+      }
+    }
+  }
+}

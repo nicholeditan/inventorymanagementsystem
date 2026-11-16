@@ -1,0 +1,50 @@
+### Week 12 REST API requests (VS Code REST Client extension)
+# Run php artisan serve --host=0.0.0.0 --port=8000 first.
+# Click "Send Request" above each request from INSIDE Codespaces.
+@baseUrl = http://127.0.0.1:8000
+
+### 1. Health check
+GET {{baseUrl}}/api/health
+Accept: application/json
+
+### 2. All students
+GET {{baseUrl}}/api/students
+Accept: application/json
+
+### 3. One student
+GET {{baseUrl}}/api/students/1
+Accept: application/json
+
+### 4. Create (check the returned id)
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Pedro Reyes",
+  "course": "BSIT",
+  "year_level": 2
+}
+
+### 5. Edit — change id to the one returned by POST
+PATCH {{baseUrl}}/api/students/3
+Content-Type: application/json
+Accept: application/json
+
+{
+  "course": "BSCS"
+}
+
+### 6. Delete — change id to the created record
+DELETE {{baseUrl}}/api/students/3
+Accept: application/json
+
+### 7. Validation demonstration (422 error)
+POST {{baseUrl}}/api/students
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "course": ""
+}
